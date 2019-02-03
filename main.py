@@ -195,8 +195,12 @@ def receiptDistribution():
     ##########################
 @app.route('/splitting', methods=['GET'])
 def splitting():
-	return render_template('/splitting.html')
+	return render_template('/confirm.html')
 
+
+@app.route('/confirm', methods=['GET'])
+def returnHome():
+	return render_template('/homepage.html')
 
 
 if __name__ == '__main__':
