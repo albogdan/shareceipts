@@ -1,1 +1,1 @@
-{'Chicken Bowl ': 9.3, 'Guacamole ': 2.7}
+{"1 Edamame ": 9.0, "1 Kimo ": 10.5, "1 A la Carte Sushi ": 243.0}

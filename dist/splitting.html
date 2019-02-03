@@ -39,6 +39,40 @@ $(document).ready(function(){
   });
 });
 </script>
+
+<script>
+$(document).ready(function(){
+	console.log("in fcn");
+  $.ajax({
+	type: 'get',
+	cache: false,
+    url:'jsonItems.txt',
+    success: function (data){
+	//console.log(data);
+
+    data = JSON.parse(data)
+    var my_table = '';
+    var tr="<tr>";
+    var trEnd = "</tr>";
+		for(var key in data){
+      $("#table-container").find('tbody').append(tr);
+      var dataPrice = data[key];
+			var td1="<td>"+key+"</td>";
+      var td2="<td>"+dataPrice+"</td>";
+
+		  $("#table-container").find('tbody').append(td1);
+      $("#table-container").find('tbody').append(td2);
+      $("#table-container").find('tbody').append(trEnd);
+    }
+
+  // my_table += '</table>'
+  // $("#myTable").find('tbody').append(my_table);
+
+    }
+  });
+});
+</script>
+
 </head>
 <body>
 <script>
@@ -70,10 +104,6 @@ $(document).ready(function(){
                                     <tr>
                                         <th id="item">Item</th>
                                         <th id="cost">Cost</th>
-                                    </tr>
-                                    <tr>
-                                        <td>Big Pulled Pork</td>
-                                        <td>9.49</td>
                                     </tr>
                                 </table>
                             </div>

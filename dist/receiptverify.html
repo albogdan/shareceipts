@@ -23,12 +23,11 @@ $(document).ready(function(){
     var my_table = '';
     var tr="<tr>";
     var trEnd = "</tr>";
-		for(var i=0;i<data.length;i++){
+		for(var key in data){
       $("#table-container").find('tbody').append(tr);
-			var dataVal = data[i];
-      var dataPrice = data[dataVal];
-			var td1="<td>dataVal</td>";
-      var td2="<td>dataPrice</td>";
+      var dataPrice = data[key];
+			var td1="<td>"+key+"</td>";
+      var td2="<td>"+dataPrice+"</td>";
 
 		  $("#table-container").find('tbody').append(td1);
       $("#table-container").find('tbody').append(td2);

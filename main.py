@@ -144,7 +144,7 @@ def detect_document(path):
 	d = dict(zip(items,prices))
 	file = open(os.path.join(app.config['UPLOAD_FOLDER'],'jsonItems.txt'),'w')
 	print(json.dumps(d))
-	file.write(str(d))
+	file.write(json.dumps(d))
 	file.close()
 
 
