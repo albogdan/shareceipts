@@ -26,8 +26,8 @@ import sys
 
 
 
-def output_read(items, prices):
-    f = open('out.txt')
+def output_read(items, prices, path):
+    f = open(path)
     line = f.readline()
     while line:
         i = 0
@@ -66,10 +66,4 @@ def output_read(items, prices):
                     elif line[i] == '\n':
                         pass
         line = f.readline()
-
-
-items = []
-prices = []
-output_read(items, prices)
-d = dict(zip(items,prices))
-print(d)
+        

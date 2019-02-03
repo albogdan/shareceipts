@@ -7,6 +7,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="receiptVerify.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/json2html/1.2.0/json2html.min.js"></script>
+<script>
+$(document).ready(function(){
+	console.log("in fcn");
+  $.ajax({
+	type: 'get',
+	cache: false,
+    url:'jsonItems.txt',
+    success: function (data){
+	//console.log(data);
+
+    data = JSON.parse(data)
+    var my_table = '';
+    var tr="<tr>";
+    var trEnd = "</tr>";
+		for(var i=0;i<data.length;i++){
+      $("#table-container").find('tbody').append(tr);
+			var dataVal = data[i];
+      var dataPrice = data[dataVal];
+			var td1="<td>dataVal</td>";
+      var td2="<td>dataPrice</td>";
+
+		  $("#table-container").find('tbody').append(td1);
+      $("#table-container").find('tbody').append(td2);
+      $("#table-container").find('tbody').append(trEnd);
+    }
+
+  // my_table += '</table>'
+  // $("#myTable").find('tbody').append(my_table);
+
+    }
+  });
+});
+</script>
+
 </head>
 <body>
    <div id="header">
@@ -22,7 +58,7 @@
                             <th><span class="circle">5</span></th>
                         </tr>
                     </table>
-            
+
         <h1>Verify Receipt</h1>
         <p>Just to be sure we got all your items on your reciept</p>
         <div class="row">
@@ -36,31 +72,18 @@
                             <th id="item">Item</th>
                             <th id="cost">Cost</th>
                         </tr>
-                        <tr>
-                            <td>1 Edamame</td>
-                            <td>9.00</td>
-                        </tr>
-						<tr>
-                            <td>1 Kimo</td>
-                            <td>10.50</td>
-                        </tr>
-						<tr>
-                            <td>1 A la Carte Sushi</td>
-                            <td>243.00</td>
-                        </tr>
                     </table>
                 </div>
             </div>
             <div class="col-lg-2">
-            </div> 
+            </div>
         </div>
-        
+
         <a href="addfriend.html"><button class="submit-buttons">Next Step</button></a>
     </div>
 </body>
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
 </body>
 

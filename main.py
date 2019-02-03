@@ -90,7 +90,7 @@ def asdf():
 @app.route('/uploadPage', methods=['GET'])
 def uploadPage():
 	return render_template('/uploadPage.html')
-	
+
 @app.route('/fileUploader', methods=['POST'])
 def upload_image():
 	f = request.files['file']
@@ -98,22 +98,22 @@ def upload_image():
 	f.save(fileLocation)
 	detect_document(fileLocation)
 	return render_template('/receiptVerify.html')
-	
+
 def detect_document(path):
 	print("beginning docuument detection")
 	file = open(os.path.join(app.config['UPLOAD_FOLDER'],'out.txt'),'w')
-	
+
 	"""Detects document features in an image."""
 	from google.cloud import vision
 	client = vision.ImageAnnotatorClient()
-	
+
 	with io.open(path, 'rb') as image_file:
 		content = image_file.read()
-		
+
 	image = vision.types.Image(content=content)
-	
+
 	response = client.document_text_detection(image=image)
-	
+
 	for page in response.full_text_annotation.pages:
 		for block in page.blocks:
 			# file.write('\nBlock confidence: {}\n'.format(block.confidence))
@@ -134,13 +134,13 @@ def detect_document(path):
 					#         symbol.text, symbol.confidence))
 				file.write('\n')
 	file.close()
-	
+
 	items = list()
 	prices = list()
 
 	items = []
 	prices = []
-	output_read(items, prices)
+	output_read(items, prices,os.path.join(app.config['UPLOAD_FOLDER'],'out.txt'))
 	d = dict(zip(items,prices))
 	file = open(os.path.join(app.config['UPLOAD_FOLDER'],'jsonItems.txt'),'w')
 	print(json.dumps(d))
@@ -160,16 +160,16 @@ def receiptDistribution():
 	data = data['pTableData']
 	with open('dist/jsontext.txt', 'w') as f:
 		f.write(data)
-    
-    
+
+
     #################
-    
+
 	data = eval(data[1:-1])
 	print(data)
 	friends = list()
 	for i in range(0,len(data)):
 		friends.append( friend(data[i]['FirstName'],data[i]['LastName'],data[i]['Email']) )
-    
+
 	dish1 = item('1 Edamame', 9.00,13,12)
 	dish2 = item('1 Kimo', 10.50,13,12)
 	dish3 = item('1 A la Carte Sushi', 243.00,13,12)
@@ -180,16 +180,16 @@ def receiptDistribution():
 	dish3.add_friend(friends)
 	dish3.assign_prices()
 	url = "https://mchacks6.appspot.com/v1/request-money"
-	
+
 	headers = {
     'Content-Type': "application/json",
     'cache-control': "no-cache",
     'Postman-Token': "d09e9d2c-cd69-429d-81b0-6669b3f7402e"
     }
-	
+
 	response_list = list(map(lambda x:requests.request("POST", url, data=x.interac_request(), headers=headers),friends))
 	list(map(lambda x:print(x.text), response_list))
-	
+
 	return 'splitting.html'
 
     ##########################

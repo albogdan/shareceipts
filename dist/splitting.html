@@ -17,29 +17,28 @@ $(document).ready(function(){
 	cache: false,
     url:'jsontext.txt',
     success: function (data){
-	console.log(data);
+	//console.log(data);
 
     data = JSON.parse(data)
-	for(var j=0;j<3;j++){
+    var my_table = '';
     var tr="<tr>";
-    $("#myTable").append(tr); 
-		for(var i=0;i<data.length;i++)
-		{
-			console.log(data[i]);
-			var dataVal = data[i]['FirstName']
-			var td1="<td><input type='button' value="+dataVal+" class='splitting' onclick='changeColor(this)'></td>";
-		   $("#myTable").append(td1); 	
-
-		}   
     var trEnd = "</tr>";
-    $("#myTable").append(trEnd); 
-
+	for(var j=0;j<3;j++){
+    $("#myTable").find('tbody').append(tr);
+		for(var i=0;i<2;i++){
+			var dataVal = data[i]['FirstName'];
+			var td1="<td><input type='button' value="+dataVal+" class='splitting' onclick='changeColor(this)'></td>";
+		  $("#myTable").find('tbody').append(td1);
+    }
+    $("#myTable").find('tbody').append(trEnd);
 	}
+  // my_table += '</table>'
+  // $("#myTable").find('tbody').append(my_table);
 
     }
   });
 });
-</script> 
+</script>
 </head>
 <body>
 <script>
@@ -91,7 +90,7 @@ var transform = {"tag":"table", "children":[
         {"tag":"tr","children":[
             {"tag":"td","html":"${FirstName}"},
             {"tag":"td","html":"${LastName}"},
-            {"tag":"td","html":"${Email}"}			
+            {"tag":"td","html":"${Email}"}
         ]}
     ]}
 ]};
@@ -104,9 +103,7 @@ $('#myTable > tbody ').json2html(data, transform);
 <table id="myTable" rules = "rows" style="width:60%">
 	<thead>
 	<tr>
- 		<th  id="name" name="fname">Person A</th>
-		<th id="last"  name="lname">Person B</th>
-		<th id="email" name="email">Person C</th>
+ 		<th  id="name" name="fname">Friends</th>
 	</tr>
 	</thead>
 	<tbody></tbody>
@@ -116,7 +113,7 @@ $('#myTable > tbody ').json2html(data, transform);
                                               <th colspan="5" id="">Names</th>
                                             </tr>
 
-                                            <tr> 
+                                            <tr>
                                                 <th><button class = "splitting" onclick = "selectPerson(this)">Sidd</button></th>
                                                 <th><button class = "splitting" onclick = "selectPerson(this)">Karen</button></th>
                                                 <th><button class = "splitting" onclick = "selectPerson(this)">Ed</button></th>
@@ -124,7 +121,7 @@ $('#myTable > tbody ').json2html(data, transform);
                                                 <th><button class = "splitting" onclick = "selectPerson(this)">Alex</button></th>
                                             </tr>
 
-                                            <tr> 
+                                            <tr>
                                                     <th><button class = "splitting" onclick = "selectPerson(this)">Sidd</button></th>
                                                     <th><button class = "splitting" onclick = "selectPerson(this)">Karen</button></th>
                                                     <th><button class = "splitting" onclick = "selectPerson(this)">Ed</button></th>
@@ -132,7 +129,7 @@ $('#myTable > tbody ').json2html(data, transform);
                                                     <th><button class = "splitting" onclick = "selectPerson(this)">Alex</button></th>
                                              </tr>
 
-                                            <tr>  
+                                            <tr>
                                                     <th><button class = "splitting" onclick = "selectPerson(this)">Sidd</button></th>
                                                     <th><button class = "splitting" onclick = "selectPerson(this)">Karen</button></th>
                                                     <th><button class = "splitting" onclick = "selectPerson(this)">Ed</button></th>
@@ -145,12 +142,12 @@ $('#myTable > tbody ').json2html(data, transform);
                           </form>
                 </div>
                 <div class="col-lg-2">
-                </div> 
+                </div>
             </div>
             <br>
         <a href="confirm.html"><button class="submit-buttons">Next Step</button></a>
     </div>
-	
+
 	  <script>
     // tell the embed parent frame the height of the content
     if (window.parent && window.parent.parent){
