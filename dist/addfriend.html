@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>eat</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="addfriend.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+   <div id="header">
+    </div>
+    <div class="body">
+        <div class="container">
+            <table style="width:60%">
+                <tr>
+                    <th><span class="circle">1</span></th>
+                    <th><span class="circle">2</span></th>
+                    <th><span class="circle-one">3</span></th>
+                    <th><span class="circle">4</span></th>
+                    <th><span class="circle">5</span></th>
+                </tr>
+            </table>
+        <h1>Add Friend</h1>
+        <p>Add your friends to the list and let us split the bill!</p>
+        <div>
+        <input id="firstName" placeholder="First Name" class = "inputText" type="text"/>
+        <input id="lastName" placeholder="Last Name"type="text" class = "inputText"/>
+        <input id="emailInput" placeholder="Email" type="text" class = "inputText"/>
+        <button onclick="myFunction()" class = "addfriendsbutton">Add Friend</button>
+        </div>
+<div class = "tables">
+<form action="/receiptDistribution" method="POST" enctype = "multipart/form-data" id="tableForm">
+
+<table id="myTable"rules = "rows" style="width:60%">
+  <tr>
+ 		<th  id="name" name="fname">First Name</th>
+		<th id="last"  name="lname">Last Name</th>
+		<th id="email" name="email">Email</th>
+  </tr>
+</table>
+<input type="button" class="submit-buttons" value="Next Step" onclick="submitForm()" />
+</form>
+
+<br>
+
+<script src = "addfriend.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    </div>
+</body>
+    
+</html>

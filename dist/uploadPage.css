@@ -1,0 +1,68 @@
+#header{
+    height: 50px;
+    background-color: #f7b801;
+    box-shadow: 0px 1px 2px #888888;
+}
+.body{
+    text-align:center;
+}
+.submit-buttons{
+    background-color:#3d348B;
+    color:white;
+    padding: 15px 32px;
+    border-radius:80px;
+    font-size: 16px;
+    border:none;
+    margin:10px;
+}
+.dragBox{
+    border: 2px dashed #ccc;
+    width:500px;
+    margin: 0 auto
+}
+.dragBox img{
+    margin: 0 auto;
+    padding-bottom:15px;
+}
+
+#dragBoxcontainer{
+    padding:30px
+}
+
+.container{
+    margin: 0 auto
+}
+.circle{
+  display: inline-block;
+    background-color:#D3D3D3;
+    height:30px;
+    width:30px;
+    border-radius:50%;
+    line-height:2;
+    text-align:center;
+    color:#EDEDED;
+}
+.circle-one{
+    display: inline-block;
+    background-color:#7785AC;
+    height:30px;
+    width:30px;
+    border-radius:50%;
+    line-height:2;
+    text-align:center;
+    color:white;
+}
+.circle p{
+    margin: 0 auto;
+    color:white;
+}
+table{
+    margin: 0 auto;
+    padding:30px;
+    padding-top:60px;
+    margin-top:40px
+}
+th{
+    text-align:center;
+    vertical-align:center;
+}

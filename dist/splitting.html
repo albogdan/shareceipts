@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>eat</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="splitting.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/json2html/1.2.0/json2html.min.js"></script>
+<script>
+$(document).ready(function(){
+	console.log("in fcn");
+  $.ajax({
+	type: 'get',
+	cache: false,
+    url:'jsontext.txt',
+    success: function (data){
+	console.log(data);
+
+    data = JSON.parse(data)
+	for(var j=0;j<3;j++){
+    var tr="<tr>";
+    $("#myTable").append(tr); 
+		for(var i=0;i<data.length;i++)
+		{
+			console.log(data[i]);
+			var dataVal = data[i]['FirstName']
+			var td1="<td><input type='button' value="+dataVal+" class='splitting' onclick='changeColor(this)'></td>";
+		   $("#myTable").append(td1); 	
+
+		}   
+    var trEnd = "</tr>";
+    $("#myTable").append(trEnd); 
+
+	}
+
+    }
+  });
+});
+</script> 
+</head>
+<body>
+<script>
+
+</script>
+   <div id="header">
+    </div>
+    <div class="body">
+        <div class="container">
+                <table style="width:60%">
+                        <tr>
+                            <th><span class="circle">1</span></th>
+                            <th><span class="circle">2</span></th>
+                            <th><span class="circle">3</span></th>
+                            <th><span class="circle-one">4</span></th>
+                            <th><span class="circle">5</span></th>
+                        </tr>
+                    </table>
+                    <br>
+        <h1>Divide Cost</h1>
+        <br>
+        <div class="row">
+                <div class="col-lg-2">
+                </div>
+                <div class="col-lg-4" id="receipt">
+                        <div class="receipt-container">
+                                <h3>Receipt</h3>
+                                <table id="table-container">
+                                    <tr>
+                                        <th id="item">Item</th>
+                                        <th id="cost">Cost</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Big Pulled Pork</td>
+                                        <td>9.49</td>
+                                    </tr>
+                                </table>
+                            </div>
+                </div>
+                <div class="col-lg-4" >
+                        <form autocomplete="off" >
+                            <div class="autocomplete" name="tableone">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/json2html/1.2.0/json2html.min.js">
+$(document).ready(function(){
+var data;
+
+var transform = {"tag":"table", "children":[
+    {"tag":"tbody","children":[
+        {"tag":"tr","children":[
+            {"tag":"td","html":"${FirstName}"},
+            {"tag":"td","html":"${LastName}"},
+            {"tag":"td","html":"${Email}"}			
+        ]}
+    ]}
+]};
+
+var data = "d";
+$('#myTable > tbody ').json2html(data, transform);
+});
+</script>
+
+<table id="myTable" rules = "rows" style="width:60%">
+	<thead>
+	<tr>
+ 		<th  id="name" name="fname">Person A</th>
+		<th id="last"  name="lname">Person B</th>
+		<th id="email" name="email">Person C</th>
+	</tr>
+	</thead>
+	<tbody></tbody>
+</table>
+                                    <!--<table  class="splittingTable" rules = "rows" style="width:60%">
+                                            <tr>
+                                              <th colspan="5" id="">Names</th>
+                                            </tr>
+
+                                            <tr> 
+                                                <th><button class = "splitting" onclick = "selectPerson(this)">Sidd</button></th>
+                                                <th><button class = "splitting" onclick = "selectPerson(this)">Karen</button></th>
+                                                <th><button class = "splitting" onclick = "selectPerson(this)">Ed</button></th>
+                                                <th><button class = "splitting" onclick = "selectPerson(this)">Zach</button></th>
+                                                <th><button class = "splitting" onclick = "selectPerson(this)">Alex</button></th>
+                                            </tr>
+
+                                            <tr> 
+                                                    <th><button class = "splitting" onclick = "selectPerson(this)">Sidd</button></th>
+                                                    <th><button class = "splitting" onclick = "selectPerson(this)">Karen</button></th>
+                                                    <th><button class = "splitting" onclick = "selectPerson(this)">Ed</button></th>
+                                                    <th><button class = "splitting" onclick = "selectPerson(this)">Zach</button></th>
+                                                    <th><button class = "splitting" onclick = "selectPerson(this)">Alex</button></th>
+                                             </tr>
+
+                                            <tr>  
+                                                    <th><button class = "splitting" onclick = "selectPerson(this)">Sidd</button></th>
+                                                    <th><button class = "splitting" onclick = "selectPerson(this)">Karen</button></th>
+                                                    <th><button class = "splitting" onclick = "selectPerson(this)">Ed</button></th>
+                                                    <th><button class = "splitting" onclick = "selectPerson(this)">Zach</button></th>
+                                                    <th><button class = "splitting" onclick = "selectPerson(this)">Alex</button></th>
+                                             </tr>
+
+                                          </table> -->
+                            </div>
+                          </form>
+                </div>
+                <div class="col-lg-2">
+                </div> 
+            </div>
+            <br>
+        <a href="confirm.html"><button class="submit-buttons">Next Step</button></a>
+    </div>
+	
+	  <script>
+    // tell the embed parent frame the height of the content
+    if (window.parent && window.parent.parent){
+      window.parent.parent.postMessage(["resultsFrame", {
+        height: document.body.getBoundingClientRect().height,
+        slug: "7u8v9wdq"
+      }], "*")
+    }
+  </script>
+</body>
+
+
+
+
+    <script src="splitting.js"></script>
+
+</body>
+
+</html>

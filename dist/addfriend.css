@@ -1,0 +1,93 @@
+#header{
+    height: 50px;
+    background-color: #f7b801;
+    box-shadow: 0px 1px 2px #888888;
+}
+.body{
+    text-align:center;
+}
+
+.friendTable{
+    float: left;
+}
+.inputText{
+    padding:8px 24px;
+    border-radius: 15px;
+    border:1px solid #cccccc
+
+}
+.submit-buttons{
+    background-color:#3d348B;
+    color:white;
+    padding: 15px 32px;
+    border-radius:80px;
+    font-size: 16px;
+    border:none;
+    margin:10px;
+
+}
+.addfriendsbutton{
+    background-color:#3d348B;
+    color:white;
+    padding: 10px 26px;
+    border-radius:80px;
+    font-size: 16px;
+    border:none;
+    margin:10px;
+
+}
+
+.container{
+    margin: 0 auto
+}
+.circle-one{
+    display: inline-block;
+    background-color:#7785AC;
+    height:30px;
+    width:30px;
+    border-radius:50%;
+    line-height:2;
+    text-align:center;
+    color:white;
+}
+.circle{
+    display: inline-block;
+      background-color:#D3D3D3;
+      height:30px;
+      width:30px;
+      border-radius:50%;
+      line-height:2;
+      text-align:center;
+      color:#EDEDED;
+  }
+  .circle p{
+      margin: 0 auto;
+      color:white;
+  }
+  table{
+      margin: 0 auto;
+      padding:30px;
+      padding-top:60px;
+      margin-top:40px
+  }
+  th{
+      text-align:center;
+      vertical-align:center;
+  }
+  #name{
+      width:150px;
+  }
+  #last{
+      width:150px;
+  }
+
+  td { 
+    padding: 10px;
+}
+
+
+.delete{
+    background-color:#ffffff;
+    border: 1px solid #ffffff;
+    font-weight: bold;
+}
