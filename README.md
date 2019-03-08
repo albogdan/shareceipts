@@ -1,7 +1,7 @@
 # Shareceipt
 
 ## What it does
-Our simple web app allows for you to upload your receipt, and digitally invoice your friends for their meals.
+Our simple web app allows for you to upload your receipt, and digitally invoice your friends for their meals. We created it at a McGill University hackathon (McHacks) in 2019. We won the prize for the "Best Newbies"
 
 ## Inspiration
 We were inspired by the Interac API, because of how simple it made money requests. We all realized that one thing we struggle with sometimes is splitting the bill, as sometimes restaurants don't accommodate for larger parties.
