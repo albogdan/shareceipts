@@ -1,5 +1,7 @@
 # Shareceipt
 
+![](https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/000/755/458/datas/gallery.jpg)
+
 ## What it does
 Our simple web app allows for you to upload your receipt, and digitally invoice your friends for their meals. We created it at a McGill University hackathon (McHacks) in 2019. We won the prize for the "Best Newbies"
 
